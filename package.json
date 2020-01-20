@@ -1,0 +1,39 @@
+{
+  "name": "alfred-algolia",
+  "version": "0.0.0",
+  "description": "Querying Athena.",
+  "license": "MIT",
+  "repository": "ragnorc/alfred-algolia",
+  "author": {
+    "name": "Ragnor Comerford",
+    "email": "hello@ragnor.co",
+    "url": "ragnorcomerford.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava",
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup"
+  },
+  "files": [
+    "index.js",
+    "icon.png",
+    "info.plist"
+  ],
+  "keywords": [
+    "alfred",
+    "workflow",
+    "alfy"
+  ],
+  "dependencies": {
+    "alfy": "^0.6.0",
+    "algoliasearch": "^3.35.1"
+  },
+  "devDependencies": {
+    "alfy-test": "^0.3.0",
+    "ava": "^0.18.0",
+    "xo": "^0.17.0"
+  }
+}
