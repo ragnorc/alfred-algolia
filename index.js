@@ -10,16 +10,25 @@ let items = [];
 index.search(alfy.input, (err, { hits } = {}) => {
 	if (err) throw err;
 	for (let hit of hits) {
+		let route;
+		switch (hit.modelName) {
+			case "Myquery":
+				route = `https://app.ragnor.co/queries/${hit.slug}`;
+				break;
+			case "Route":
+				route = `https://app.ragnor.co${hit.route}`;
+				break;
+			default:
+				route = `https://app.ragnor.co/${hit.modelName.toLowerCase()}/${
+					hit.id
+				}`;
+				break;
+		}
 		items.push({
 			title: hit.question || hit.fullName || hit.title || hit.name || "",
 			subtitle: hit.modelName,
 			icon: { path: "./icon.png" },
-			arg:
-				hit.modelName != "Myquery"
-					? `https://app.ragnor.co/elements/${hit.modelName.toLowerCase()}/${
-							hit.id
-					  }`
-					: `https://app.ragnor.co/queries/${hit.slug}`
+			arg: route
 		});
 	}
 	alfy.output(items);
