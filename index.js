@@ -12,10 +12,10 @@ index.search(alfy.input, (err, { hits } = {}) => {
 	for (let hit of hits) {
 		let route;
 		switch (hit.modelName) {
-			case "Myquery":
+			case "myquery":
 				route = `https://app.ragnor.co/queries/${hit.slug}`;
 				break;
-			case "Route":
+			case "route":
 				route = `https://app.ragnor.co${hit.route}`;
 				break;
 			default:
