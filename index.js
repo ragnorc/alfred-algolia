@@ -19,9 +19,7 @@ index.search(alfy.input, (err, { hits } = {}) => {
 				route = `https://app.ragnor.co${hit.route}`;
 				break;
 			default:
-				route = `https://app.ragnor.co/${hit.modelName.toLowerCase()}/${
-					hit.id
-				}`;
+				route = `https://app.ragnor.co/${hit.modelName}/${hit.id}`;
 				break;
 		}
 		items.push({
